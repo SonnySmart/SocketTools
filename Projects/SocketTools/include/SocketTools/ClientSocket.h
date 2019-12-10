@@ -20,22 +20,22 @@ namespace socket_tools
 			const char* port);
 
 		template<typename T, size_t size>
-		void Send(const T(&data)[size])
+		size_t Send(const T(&data)[size])
 		{
-			Send(
+			return Send(
 				reinterpret_cast<const uint8_t*>(data),
 				size * sizeof(T));
 		}
 
 		template<typename T, size_t size>
-		void Receive(T(&data)[size])
+		size_t Receive(T(&data)[size])
 		{
-			Receive(
+			return Receive(
 				reinterpret_cast<uint8_t*>(data),
 				size * sizeof(T));
 		}
 
-		void Send(const uint8_t* data, size_t size);
-		void Receive(uint8_t* data, size_t size);
+		size_t Send(const uint8_t* data, size_t size);
+		size_t Receive(uint8_t* data, size_t size);
 	};
 }

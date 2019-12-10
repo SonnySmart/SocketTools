@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{82B84FDE-59C4-49EA-9E49-224D9EA3A8C3}</ProjectGuid>
-    <RootNamespace>SocketTools</RootNamespace>
+    <ProjectGuid>{C09A31A8-ED77-45B9-BAC8-CC70D1201156}</ProjectGuid>
+    <RootNamespace>Glory</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -29,27 +29,27 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -72,10 +72,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)Bin\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)Bin\Temp\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)Bin\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)Bin\Temp\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)Bin\$(Configuration)\$(Platform)\</OutDir>
@@ -87,76 +89,82 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level4</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>SOCKET_TOOLS_DYNAMIC_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\Projects\SocketTools\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ws2_32.lib;libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <WarningLevel>Level4</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>SOCKET_TOOLS_DYNAMIC_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\Projects\SocketTools\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ws2_32.lib;libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <WarningLevel>Level4</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>SOCKET_TOOLS_DYNAMIC_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\Projects\SocketTools\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ws2_32.lib;libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <WarningLevel>Level4</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>SOCKET_TOOLS_DYNAMIC_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\Projects\SocketTools\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ws2_32.lib;libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="include\SocketTools\Common.h" />
-    <ClInclude Include="include\SocketTools\ClientSocket.h" />
-    <ClInclude Include="include\SocketTools\ServerSocket.h" />
-    <ClInclude Include="include\SocketTools\Socket.h" />
-    <ClInclude Include="include\SocketTools\SocketManager.h" />
-    <ClInclude Include="src\Address.h" />
-    <ClInclude Include="src\WSA_Helpers.h" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MobileClientKernel\Cipher.cpp" />
+    <ClCompile Include="MobileClientKernel\LuaAssert.cpp" />
+    <ClCompile Include="MobileClientKernel\MCKernel.cpp" />
+    <ClCompile Include="MobileClientKernel\MobileClientKernel.cpp" />
+    <ClCompile Include="MobileClientKernel\ry_MD5.cpp" />
+    <ClCompile Include="MobileClientKernel\SocketService.cpp" />
+    <ClCompile Include="MobileClientKernel\TCPSocket.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Address.cpp" />
-    <ClCompile Include="src\ClientSocket.cpp" />
-    <ClCompile Include="src\ServerSocket.cpp" />
-    <ClCompile Include="src\Socket.cpp" />
-    <ClCompile Include="src\SocketManager.cpp" />
-    <ClCompile Include="src\WSA_Helpers.cpp" />
+    <ClInclude Include="MobileClientKernel\Cipher.h" />
+    <ClInclude Include="MobileClientKernel\Define.h" />
+    <ClInclude Include="MobileClientKernel\iconv.h" />
+    <ClInclude Include="MobileClientKernel\LuaAssert.h" />
+    <ClInclude Include="MobileClientKernel\MCKernel.h" />
+    <ClInclude Include="MobileClientKernel\MobileClientKernel.h" />
+    <ClInclude Include="MobileClientKernel\packet.h" />
+    <ClInclude Include="MobileClientKernel\ry_MD5.h" />
+    <ClInclude Include="MobileClientKernel\SocketService.h" />
+    <ClInclude Include="MobileClientKernel\TCPSocket.h" />
+    <ClInclude Include="Protocol\Protocol.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

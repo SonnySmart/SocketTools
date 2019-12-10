@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\MobileClientKernel">
+      <UniqueIdentifier>{7082fb6c-bfab-40c9-aef3-dbc2b13d6b9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Protocol">
+      <UniqueIdentifier>{623c3c2e-a97f-4a92-b72c-763bf009317f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MobileClientKernel\Cipher.cpp">
+      <Filter>源文件\MobileClientKernel</Filter>
+    </ClCompile>
+    <ClCompile Include="MobileClientKernel\LuaAssert.cpp">
+      <Filter>源文件\MobileClientKernel</Filter>
+    </ClCompile>
+    <ClCompile Include="MobileClientKernel\MCKernel.cpp">
+      <Filter>源文件\MobileClientKernel</Filter>
+    </ClCompile>
+    <ClCompile Include="MobileClientKernel\MobileClientKernel.cpp">
+      <Filter>源文件\MobileClientKernel</Filter>
+    </ClCompile>
+    <ClCompile Include="MobileClientKernel\ry_MD5.cpp">
+      <Filter>源文件\MobileClientKernel</Filter>
+    </ClCompile>
+    <ClCompile Include="MobileClientKernel\SocketService.cpp">
+      <Filter>源文件\MobileClientKernel</Filter>
+    </ClCompile>
+    <ClCompile Include="MobileClientKernel\TCPSocket.cpp">
+      <Filter>源文件\MobileClientKernel</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MobileClientKernel\Cipher.h">
+      <Filter>源文件\MobileClientKernel</Filter>
+    </ClInclude>
+    <ClInclude Include="MobileClientKernel\Define.h">
+      <Filter>源文件\MobileClientKernel</Filter>
+    </ClInclude>
+    <ClInclude Include="MobileClientKernel\iconv.h">
+      <Filter>源文件\MobileClientKernel</Filter>
+    </ClInclude>
+    <ClInclude Include="MobileClientKernel\LuaAssert.h">
+      <Filter>源文件\MobileClientKernel</Filter>
+    </ClInclude>
+    <ClInclude Include="MobileClientKernel\MCKernel.h">
+      <Filter>源文件\MobileClientKernel</Filter>
+    </ClInclude>
+    <ClInclude Include="MobileClientKernel\MobileClientKernel.h">
+      <Filter>源文件\MobileClientKernel</Filter>
+    </ClInclude>
+    <ClInclude Include="MobileClientKernel\packet.h">
+      <Filter>源文件\MobileClientKernel</Filter>
+    </ClInclude>
+    <ClInclude Include="MobileClientKernel\ry_MD5.h">
+      <Filter>源文件\MobileClientKernel</Filter>
+    </ClInclude>
+    <ClInclude Include="MobileClientKernel\SocketService.h">
+      <Filter>源文件\MobileClientKernel</Filter>
+    </ClInclude>
+    <ClInclude Include="MobileClientKernel\TCPSocket.h">
+      <Filter>源文件\MobileClientKernel</Filter>
+    </ClInclude>
+    <ClInclude Include="Protocol\Protocol.h">
+      <Filter>源文件\Protocol</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

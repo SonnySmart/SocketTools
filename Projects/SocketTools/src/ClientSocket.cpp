@@ -44,7 +44,7 @@ namespace socket_tools
 		throw std::runtime_error("Unable to connect to server!");
 	}
 
-	void ClientSocket::Send(const uint8_t* data, size_t size)
+	size_t ClientSocket::Send(const uint8_t* data, size_t size)
 	{
 		CheckSocket();
 
@@ -52,13 +52,16 @@ namespace socket_tools
 
 		if (error != SOCKET_ERROR)
 		{
-			return;
+			printf("数据发送成功[%p][%d]\n", data, size);
+			return error;
 		}
 
-		ThrowLastError("send failed with error: ");
+		printf("数据发送失败[%p][%d]\n", data, size);
+		return error;
+		//ThrowLastError("send failed with error: ");
 	}
 
-	void ClientSocket::Receive(uint8_t* data, size_t size)
+	size_t ClientSocket::Receive(uint8_t* data, size_t size)
 	{
 		CheckSocket();
 
@@ -66,14 +69,16 @@ namespace socket_tools
 
 		if (res > 0)
 		{
-			return;
+			return res;
 		}
 
-		if (res == 0)
-		{
-			throw std::runtime_error("Connection closed");
-		}
+		return res;
 
-		ThrowLastError("recv failed with error: ");
+		//if (res == 0)
+		//{
+		//	throw std::runtime_error("Connection closed");
+		//}
+
+		//ThrowLastError("recv failed with error: ");
 	}
 }
